@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Premium | Loja de Instrumentos</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" id="site-logo">
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Qual é o teu som hoje?">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Carrinho <span class="badge">0</span></a></li>
+                <li><a href="#" class="user-icon"><i class="far fa-user-circle"></i> Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Sente a <span class="highlight">Vibração</span></h1>
+            <p>Os melhores instrumentos para quem faz a música acontecer.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">Explorar Loja</a>
+                <a href="#" class="btn-secondary">Ver Ofertas</a>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+<section class="products-section">
+    <div class="container">
+        <h2 class="section-title">Nossa <span class="highlight">Coleção</span></h2>
+        
+        <div class="product-grid">
+
+            <!-- CARD -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Cordas</span>
+                    <h3>Fender Stratocaster</h3>
+                    <p class="price">€ 1.250,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- DUPLICA SÓ O CARD, NÃO A GRID -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1520527053376-ae010f403d21?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Teclas</span>
+                    <h3>Yamaha P-125</h3>
+                    <p class="price">€ 850,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Percussão</span>
+                    <h3>Bateria Pearl</h3>
+                    <p class="price">€ 2.100,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1573871666457-7c732941520c?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Clássicos</span>
+                    <h3>Violino Stradivari</h3>
+                    <p class="price">€ 4.500,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+
+
+
+            <!-- CARD -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Cordas</span>
+                    <h3>Fender Stratocaster</h3>
+                    <p class="price">€ 1.250,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- DUPLICA SÓ O CARD, NÃO A GRID -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1520527053376-ae010f403d21?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Teclas</span>
+                    <h3>Yamaha P-125</h3>
+                    <p class="price">€ 850,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Percussão</span>
+                    <h3>Bateria Pearl</h3>
+                    <p class="price">€ 2.100,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1573871666457-7c732941520c?q=80&w=500">
+                </div>
+                <div class="product-info">
+                    <span class="category">Clássicos</span>
+                    <h3>Violino Stradivari</h3>
+                    <p class="price">€ 4.500,00</p>
+                    <button class="btn-add">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- ADICIONE MAIS CARDS AQUI -->
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

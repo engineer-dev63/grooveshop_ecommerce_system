@@ -1,0 +1,510 @@
+/* ---------------------------------------------------------
+   [1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS]
+   Definição de cores, fontes e reset de margens.
+   --------------------------------------------------------- */
+:root {
+    --primary-color: #00d4ff;    /* Azul Neon */
+    --bg-dark: #0a0a0a;          /* Fundo Profundo */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.7);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   [2. SCROLLBAR PERSONALIZADA]
+   Estilização da barra de rolagem lateral.
+   --------------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ---------------------------------------------------------
+   [3. NAVBAR / NAVEGAÇÃO SUPERIOR]
+   Estilo com efeito Glassmorphism e Barra de Pesquisa.
+   --------------------------------------------------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 5px 15px;
+    transition: var(--transition);
+    width: 30%;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.badge {
+    background: var(--primary-color);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* ---------------------------------------------------------
+   [4. HERO SECTION / DESTAQUE]
+   Banner principal com imagem e botões de chamada.
+   --------------------------------------------------------- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+    border: 1px solid var(--text-dim);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
+
+/* ---------------------------------------------------------
+   [5. VITRINE DE PRODUTOS / GRID]
+   Este bloco força 4 colunas horizontais e alinha os botões.
+   --------------------------------------------------------- */
+/* SECTION */
+.products-section {
+    padding: 80px 8%;
+}
+
+/* GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    align-items: stretch;
+}
+
+/* CARD */
+.product-card {
+    background: #111;
+    border-radius: 20px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    min-height: 400px; /* 🔥 chave do alinhamento */
+}
+
+/* IMAGEM */
+.product-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.category {
+    font-size: 12px;
+    color: #00d4ff;
+    margin-top: 10px;
+}
+
+/* TÍTULO PADRONIZADO */
+.product-info h3 {
+    font-size: 16px;
+    margin: 10px 0;
+
+    height: 40px; /* 🔥 mantém todos iguais */
+    overflow: hidden;
+}
+
+/* PREÇO SEMPRE EMBAIXO */
+.price {
+    margin-top: auto;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* BOTÃO */
+.btn-add {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #00d4ff;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   [6. VITRINE DE PRODUTOS - GRADE E ANIMAÇÕES]
+   --------------------------------------------------------- */
+.products-section {
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.product-grid {
+    display: grid;
+    /* Força exatamente 4 colunas iguais */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    width: 100%;
+    max-width: 1300px;
+    align-items: stretch;
+}
+
+.product-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Transição suave para o card */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                background 0.3s ease, 
+                border-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* EFEITO DE HOVER NO CARD */
+.product-card:hover {
+    transform: translateY(-12px); /* Card sobe */
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transição suave para o zoom da imagem */
+    transition: transform 0.5s ease;
+}
+
+/* EFEITO DE ZOOM NA IMAGEM AO PASSAR O RATO */
+.product-card:hover .product-img img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 2; */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.8em;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: auto;
+    padding-bottom: 15px;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* EFEITO NO BOTÃO AO PASSAR O RATO */
+.product-card:hover .btn-add {
+    background: var(--primary-color);
+    color: black;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------
+   [7. RESPONSIVIDADE / MEDIA QUERIES]
+   Ajustes de layout para diferentes tamanhos de ecrã.
+   --------------------------------------------------------- */
+
+/* Tablets (iPad, etc.) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 3%;
+    }
+    .search-box {
+        width: 40%;
+    }
+}
+
+/* Telemóveis (Smartphones) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 5%;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .nav-links {
+        order: 2;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    .search-box {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ecrãs Muito Pequenos */
+@media (max-width: 480px) {
+    .nav-links span {
+        display: none;
+    }
+}
