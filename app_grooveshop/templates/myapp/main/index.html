@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Premium | Loja de Instrumentos</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    {% include "myapp/pieces/navbar.html" %}
+
+
+    <main class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Faça seu som <span class="highlight">na Groove</span></h1>
+            <p>Para todos os estilos, em todos os tons</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">Explorar Loja</a>
+                <a href="#" class="btn-secondary">Ver Ofertas</a>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+{% include "myapp/pieces/vitrini.html" %}
+
+
+
+{% include "myapp/pieces/footer.html" %}
+
+
+</body>
+</html>

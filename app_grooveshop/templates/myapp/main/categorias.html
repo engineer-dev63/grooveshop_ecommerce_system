@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+
+</head>
+<body>
+    
+{% include "myapp/pieces/navbar.html" %}
+
+
+<section class="info-bar">
+    <div class="info-item">
+        <i class="fas fa-percentage"></i>
+        <span><strong>10% de desconto</strong> no Pix ou Boleto</span>
+    </div>
+    <div class="info-item">
+        <i class="far fa-credit-card"></i>
+        <span><strong>Parcelamos</strong> em até 12x no cartão</span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-shield-alt"></i>
+        <span><strong>Loja segura</strong> Selo SSL de proteção</span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-truck"></i>
+        <span><strong>Entrega rápida</strong> Para todo o Brasil</span>
+    </div>
+</section>
+
+<section class="categories-slider-section">
+    <h2 class="category-title">NAVEGUE POR <span>CATEGORIAS</span></h2>
+    
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="{% static 'myapp/images/violin.png' %}" alt="Amplificadores"></div>
+                <span>Amplificadores</span>
+            </div>
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://images.pexels.com/photos/36881006/pexels-photo-36881006.jpeg" alt="Fones"></div>
+                <span>Fones de Ouvido</span>
+            </div>
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/d3/6d/15/e8/85/v1_E10/E10ANWV2.jpg?w=800&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=ea394fdf0b683dedb7a988c2c47a0ea4a47a11dda97b67b6f0d8d53fbdd839c6" alt="Mesas"></div>
+                <span>Mesas de Som</span>
+            </div>
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/90/2a/97/c9/0e/v1_E10/E10HV209.jpg?w=800&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=abd4a3a394bd72f62a0fcbd727e423632058c6e9de85eee80777a02dd9e7da98" alt="Microfones"></div>
+                <span>Microfones</span>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/4d/2c/5e/dd/67/v1_E11/E117TZBA.jpg?w=800&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=fb2fbedf00f3f2d85617fd25b01e1351680687d2ae9cef7de545dd88ed255a5c" alt="Microfones"></div>
+                <span>Microfones</span>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://images.pexels.com/photos/10315093/pexels-photo-10315093.jpeg" alt="Microfones"></div>
+                <span>Microfones</span>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://images.pexels.com/photos/10315093/pexels-photo-10315093.jpeg" alt="Microfones"></div>
+                <span>Microfones</span>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="cat-circle"><img src="https://images.pexels.com/photos/10315093/pexels-photo-10315093.jpeg" alt="Microfones"></div>
+                <span>Microfones</span>
+            </div>
+
+            </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 4 },
+      1024: { slidesPerView: 7 },
+    },
+  });
+</script>
+
+{% include "myapp/pieces/vitrini.html" %}
+
+
+</body>
+</html>

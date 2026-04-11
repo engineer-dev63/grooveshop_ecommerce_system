@@ -1,0 +1,21 @@
+{% load static %}
+
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'myapp/images/Soul_music_logo__2_-removebg-preview.png' %}" alt="Logo" id="site-logo">
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Qual é o teu som hoje?">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="carrinho.html">Carrinho <span class="badge">0</span></a></li>
+                <li><a href="#" class="user-icon"><i class="far fa-user-circle"></i> Conta</a></li>
+            </ul>
+        </nav>
+    </header>

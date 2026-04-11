@@ -19,5 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('index.html', views.index)
+    path('index.html', views.index),
+    path('categorias.html', views.categorias)
+
 ]
